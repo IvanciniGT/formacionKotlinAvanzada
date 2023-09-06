@@ -97,14 +97,14 @@ Un componente de alto nivel no debe depender de una implementación de un compon
 En Kotlin tenemos el operador "?", que entre otras cosas, nos permite definir que una función devuelve un dato de un tipo... o no!
 
             fun getSignificados(palabra: String): List<String>?;
-
-class Usuario(val nombre: String){                  //Que tiene una longitud mayor que 0
-init{
-// Meto un if para comprobar la longitud
-// Si tiene como longitud 0: Lanzo Exception
-throw RuntimeException("No ha puesto el nombre, capullo!!!!!");
-}
-}
+    
+    class Usuario(val nombre: String){                  //Que tiene una longitud mayor que 0
+        init{
+            // Meto un if para comprobar la longitud
+            // Si tiene como longitud 0: Lanzo Exception
+            throw RuntimeException("No ha puesto el nombre, capullo!!!!!");
+        }
+    }
 
 En Kotlin no puedo avisar que mi función va a lanzar una Exception... En la docu si ... pero que eso no lo mira nadie.
 De nuevo queda algo NO EXPLICITO en código.
@@ -112,24 +112,24 @@ En Kotlin existe el tipo de dato: Result<>
 Un Result es una caja que puede llevar dentro un dato del tipo especificado o un Throwable
 
 Para usar el objeto Result deberíamos:
-
-interface Usuario {
-val nombre: String;
-
-    companion object {
-        // Aquí definimos lo que ej JAVA serían funciones STATIC
-        // El companion object es un Singleton que se invoca con el mismo nombre de la clase o interfaz donde está definido
-        fun crearUsuario(nombre:String): Result<Usuario> {
-            if (nombre.length == 0)
-                // Devuelvo un REsult con una Exception
-            else
-                return UsuarioImpl(nombre);
+    
+    interface Usuario {
+    val nombre: String;
+    
+        companion object {
+            // Aquí definimos lo que ej JAVA serían funciones STATIC
+            // El companion object es un Singleton que se invoca con el mismo nombre de la clase o interfaz donde está definido
+            fun crearUsuario(nombre:String): Result<Usuario> {
+                if (nombre.length == 0)
+                    // Devuelvo un REsult con una Exception
+                else
+                    return UsuarioImpl(nombre);
+            }
         }
+        private class UsuarioImpl (override val nombre: String): Usuario
     }
-    private class UsuarioImpl (override val nombre: String): Usuario
-}
-
-Usuario.crearUsuario("Ivan");
+    
+    Usuario.crearUsuario("Ivan");
 
 Esta es la solución que se da en Kotlin a las Excepciones... el uso de Result<?>
 
@@ -153,21 +153,21 @@ Al API de Arrow le vamos a pasar una FUNCION con el código que debe ejecutarse 
 Y una función con el código que debe ejecutarse si algo ha ido mal.
 
 Y AQUI ENTRA LA PROGRAMACION FUNCIONAL !
-
-class GestionUsuarios {
-procesarError(val error: CreacionUsuarioError) : Unit {
-// Hace lo que sea
-}
-procesarGuay(val usuario: Usuario) : Unit {
-// Hace lo que sea
-}
-}
+    
+    class GestionUsuarios {
+        procesarError(val error: CreacionUsuarioError) : Unit {
+            // Hace lo que sea
+        }
+        procesarGuay(val usuario: Usuario) : Unit {
+             // Hace lo que sea
+        }
+    }
 
 // : Nothing (Se usa para funciones que no devuelven nada,.... porque no acaban de ejecutarse)
 
 
 
-respuesta.fold( GestionUsuarios::procesarError , GestionUsuarios::procesarGuay )
+    respuesta.fold( GestionUsuarios::procesarError , GestionUsuarios::procesarGuay )
 
         # Equivalente con Exceptions
         try{
@@ -184,21 +184,19 @@ respuesta.fold( {} ) {}         Esta linea en Kotlin es equivalente a la de arri
 
 
 
-
-
-inline fun <C> fold(
-
-    ifLeft: (left: A) -> C, 
-    ifRight: (right: B) -> C)
     
-    : C
-
-
-fun doble(val numero:Int) : Int {
-return numero * 2
-}
-
-val miVariable: (Int) -> Int = {numero:Int -> numero * 2}
+    
+    inline fun <C> fold(
+    
+        ifLeft: (left: A) -> C, 
+        ifRight: (right: B) -> C)
+        
+        
+        fun doble(val numero:Int) : Int {
+            return numero * 2
+        }
+        
+        val miVariable: (Int) -> Int = {numero:Int -> numero * 2}
 
 
 Proyecto: Servicio Backend con Kotlin:
@@ -215,57 +213,57 @@ Implementación del API de diccionarios.
 
 ---
 API: diccionario-desde-ficheros-1.0.0.jar
-
-public class SuministradorDeDiccionariosDesdeFicheros implements SuministradorDeDiccionarios{
-... Funciones con su código
-}
-
-public DiccionarioDesdeFichero implements Diccionario {
-... Funciones con su código
-}
+    
+    public class SuministradorDeDiccionariosDesdeFicheros implements SuministradorDeDiccionarios{
+    ... Funciones con su código
+    }
+    
+    public DiccionarioDesdeFichero implements Diccionario {
+    ... Funciones con su código
+    }
 
 ---
 API: diccionario-api-1.0.0.jar
-
-interface Diccionario {
-boolean existe(String palabra);
-Optional<List<String>> getSignificados(String palabra);
-}
-interface SuministradorDeDiccionarios {
-boolean tienesDiccionarioDe(String idioma);
-Optional<Diccionario> getDiccionario(String idioma);
-}
+    
+    interface Diccionario {
+        boolean existe(String palabra);
+        Optional<List<String>> getSignificados(String palabra);
+    }
+    interface SuministradorDeDiccionarios {
+        boolean tienesDiccionarioDe(String idioma);
+        Optional<Diccionario> getDiccionario(String idioma);
+    }
 ---
 
 App que necesite saber si una palabra existe en un idioma?
-
-import com.diccionarios.SuministradorDeDiccionarios;                                // Esto es una interfaz
-// import com.diccionarios.ficheros.SuministradorDeDiccionariosDesdeFicheros;          // Esto es una implementación
-// Aquí la acabamos de regar hasta lo más profundo del alma!
-// Esta linea es la muerte del proyecto!
-// Con esta linea nos acabamos de MEAR en el PRO de inversión de dependencias
-// Acabo de atarme de pies y manos a esa implementación.
-// Si la gente que implementa esa librería hace un cambio en ella (cambiar el nombre de la clase... cambiar la clase por otra)
-// YO TENGO QUE CAMBIAR CODIGO DE MI APP... ESTO ES UN SIN SENTIDO
-
-public class App {
-
-    public void procesarPalabra(String palabra, String idioma, SuministradorDeDiccionarios suministrador ) { // Inyección de dependencias
-        // hago cosas
-        // Necesito saber si la palabra existe o no en el diccionario del idioma
-        boolean existeLaPalabra = false;
-        if(suministrador.tienesDiccionarioDe(idioma)) {
-            existeLaPalabra = suministrador.getDiccionario(idioma).get().existe(palabra);
-                                                                   /////
+    
+    import com.diccionarios.SuministradorDeDiccionarios;                                // Esto es una interfaz
+    // import com.diccionarios.ficheros.SuministradorDeDiccionariosDesdeFicheros;          // Esto es una implementación
+    // Aquí la acabamos de regar hasta lo más profundo del alma!
+    // Esta linea es la muerte del proyecto!
+    // Con esta linea nos acabamos de MEAR en el PRO de inversión de dependencias
+    // Acabo de atarme de pies y manos a esa implementación.
+    // Si la gente que implementa esa librería hace un cambio en ella (cambiar el nombre de la clase... cambiar la clase por otra)
+    // YO TENGO QUE CAMBIAR CODIGO DE MI APP... ESTO ES UN SIN SENTIDO
+    
+    public class App {
+    
+        public void procesarPalabra(String palabra, String idioma, SuministradorDeDiccionarios suministrador ) { // Inyección de dependencias
+            // hago cosas
+            // Necesito saber si la palabra existe o no en el diccionario del idioma
+            boolean existeLaPalabra = false;
+            if(suministrador.tienesDiccionarioDe(idioma)) {
+                existeLaPalabra = suministrador.getDiccionario(idioma).get().existe(palabra);
+                                                                       /////
+            }
+    
+            // Y luego sigo haciendo cosas
         }
-
-        // Y luego sigo haciendo cosas
+    
     }
-
-}
-
-// A esto nos ayudan los frameworks de Inyección de Dependencias
-SuministradorDeDiccionarios -> new SuministradorDeDiccionariosDesdeFicheros();
+    
+    // A esto nos ayudan los frameworks de Inyección de Dependencias
+    SuministradorDeDiccionarios -> new SuministradorDeDiccionariosDesdeFicheros();
 
 ---
 

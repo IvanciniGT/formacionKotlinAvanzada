@@ -1,5 +1,9 @@
 import arrow.core.Either
-
+import arrow.core.flatMap
+import arrow.core.left
+import arrow.core.raise.either
+import arrow.core.raise.ensure
+import arrow.core.right
 
 interface PersonaCreationError {
     val message: String
@@ -21,17 +25,41 @@ interface PersonaEither{
         override val dni: String,
     ) : PersonaEither
     companion object {
-        // INVOKE sobreescribe la llamada a la interfaz, como si fuera un constructor
-        operator fun invoke(nombre: String, edad: Int, email: String, dni: String): Either<PersonaCreationError,PersonaEither> {
 
+        fun validarNombre(nombre: String): Either<PersonaCreationError, String> {
+            if (!nombre.matches(Regex("^[A-Z][a-záéíóúñ]+$"))) {
+                return PersonaCreationError.IllegalNombreOnPersonaCreation("El nombre debe tener caracteres y empezar por mayúscula").left()
+            }
+            return nombre.right()
+        }
+        fun validarEdad(edad: Int): Either<PersonaCreationError, Int> = either{
+            ensure (edad > 0) {
+                PersonaCreationError.IllegalEdadOnPersonaCreation("La edad debe ser mayor de 0")
+            }
+            edad
+        }
+        fun validarEmail(email: String): Either<PersonaCreationError, Unit> = either{
+            ensure (email.matches(Regex("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"))) {
+                PersonaCreationError.IllegalEmailOnPersonaCreation("El email debe ser un email")
+            }
+        }
+        fun validarDni(dni: String): Either<PersonaCreationError, String> {
+            if (!dni.matches(Regex("^[0-9]{1,8}[A-Z]$"))) {
+                return PersonaCreationError.IllegalDniOnPersonaCreation("El dni debe ser un dni").left()
+            }
+            return dni.right()
+        }
+        // INVOKE sobreescribe la llamada a la interfaz, como si fuera un constructor
+        operator fun invoke(nombre: String, edad: Int, email: String, dni: String): Either<PersonaCreationError,PersonaEither>  =
+/*
                 // val mayorDeEdad: Boolean = edad >= 18
                 // ME aseguro que el nombre tenga caracteres y empiece por mayúscula
                 if (!nombre.matches(Regex("^[A-Z][a-záéíóúñ]+$"))) {
-                    return Either.Left(PersonaCreationError.IllegalNombreOnPersonaCreation("El nombre debe tener caracteres y empezar por mayúscula"))
+                    return PersonaCreationError.IllegalNombreOnPersonaCreation("El nombre debe tener caracteres y empezar por mayúscula").left()
                 }
                 // Me aseguro que la edad sea mayor de 0
                 if (edad < 0) {
-                    return Either.Left( PersonaCreationError.IllegalEdadOnPersonaCreation("La edad debe ser mayor de 0"))
+                    return PersonaCreationError.IllegalEdadOnPersonaCreation("La edad debe ser mayor de 0").left()
                 }
                 // Me aseguro que el email sea un email
                 if (!email.matches(Regex("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"))) {
@@ -42,7 +70,18 @@ interface PersonaEither{
                     return Either.Left( PersonaCreationError.IllegalDniOnPersonaCreation("El dni debe ser un dni"))
                 }
                 // Devuelvo un Either con el valor de la derecha, el bueno. Esto es el caso: TODO HA IDO BIEN
-                return Either.Right(PersonaEitherImpl(nombre, edad, email, dni))
+                //return Either.Right(PersonaEitherImpl(nombre, edad, email, dni))
+                return PersonaEitherImpl(nombre, edad, email, dni).right()
+*/
+                validarNombre(nombre)
+                    .flatMap { validarEdad(edad) }      // Either(ERROR_A, _ ) -> Either(ERROR_B, _)
+                                                       // Solo se ejecuta el flatMap si no ha habido error. Si hay error, no se ejecuta
+                    .flatMap { validarEmail(email) }
+                    .flatMap { validarDni(dni) }
+                    // Si llegados a este punto no hay error: Devuelvo la persona
+                                                        // Either(_, DATO_A) -> Either(_, DATO_B)
+                    .map    { PersonaEitherImpl(nombre, edad, email, it /*dni*/)
+
         }
     }
 }
@@ -53,7 +92,7 @@ interface PersonaEither{
 fun main(){
     // Crear una Persona
     var p1: Either<PersonaCreationError, PersonaEither> = PersonaEither("Pepe", 23, "ivan@pepe.com", "12345678A")
-    //p1 = PersonaEither("felipe", -17, "http://felipe.com", "ABCDEFGH1")
+    p1 = PersonaEither("felipe", -17, "http://felipe.com", "ABCDEFGH1")
     if (p1.isRight()) {
         println("Persona creada correctamente")
         println(p1.getOrNull()) // Esto devuelve el valor de la derecha
@@ -67,6 +106,25 @@ fun main(){
             else -> println("Otro error al crear la persona: ${p1.leftOrNull()?.message}")
         }
     }
+
+    // Sintaxis alternativa
+    p1.fold(
+        {
+            when (it) {
+                is PersonaCreationError.IllegalNombreOnPersonaCreation -> println("Error al crear la persona. Su nombre es inválido: ${it.message}")
+                is PersonaCreationError.IllegalEdadOnPersonaCreation -> println("Error al crear la persona. Su edad es inválida: ${it.message}")
+                is PersonaCreationError.IllegalEmailOnPersonaCreation -> println("Error al crear la persona. Su email es inválido: ${it.message}")
+                is PersonaCreationError.IllegalDniOnPersonaCreation -> println("Error al crear la persona. Su dni es inválido: ${it.message}")
+                else -> println("Otro error al crear la persona: ${it.message}")
+            }
+        }
+    ){
+        println("Persona creada correctamente: ${it.nombre}") // En este caso it, hace referencia al RIGHT
+    }
+
+
+
+
 }
 
 // Esta es la solución Que ofrece ARROW Como reemplazo de los Result de Kotlin para Excepciones

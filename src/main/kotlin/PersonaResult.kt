@@ -13,8 +13,7 @@ interface PersonaResult{
     ) : PersonaResult
     companion object {
         // INVOKE sobreescribe la llamada a la interfaz, como si fuera un constructor
-        operator fun invoke(nombre: String, edad: Int, email: String, dni: String): Result<PersonaResult> {
-            return runCatching {
+        operator fun invoke(nombre: String, edad: Int, email: String, dni: String): Result<PersonaResult> = runCatching {
 
                 // val mayorDeEdad: Boolean = edad >= 18
                 // ME aseguro que el nombre tenga caracteres y empiece por mayúscula
@@ -34,7 +33,6 @@ interface PersonaResult{
                     throw IllegalDNIException("El dni debe ser un dni")
                 }
                 PersonaResultImpl(nombre, edad, email, dni)
-            }
         }
     }
 }
