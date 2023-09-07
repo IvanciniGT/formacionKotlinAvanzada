@@ -1,3 +1,5 @@
+package concepts
+
 interface PersonaNulable{
     val nombre: String
     val edad: Int

@@ -1,8 +1,10 @@
+package concepts
+
 class IllegalDNIException(message: String): IllegalArgumentException(message)
 class IllegalNombreException(message: String): IllegalArgumentException(message)
 class IllegalEdadException(message: String): IllegalArgumentException(message)
 class IllegalEmailException(message: String): IllegalArgumentException(message)
-class Persona /*constructor*/ (nombre:String, edad: Int, email: String, dni: String){
+class PersonaExcepcion /*constructor*/ (nombre:String, edad: Int, email: String, dni: String){
     // val mayorDeEdad: Boolean = edad >= 18
     init { // Damos código que se ejecuta al crearse una instancia de la clase
         // ME aseguro que el nombre tenga caracteres y empiece por mayúscula
@@ -29,21 +31,21 @@ class Persona /*constructor*/ (nombre:String, edad: Int, email: String, dni: Str
 // Estos los usamos para DTOs
 
 fun main(){
-    // Crear una Persona
-    val p1 = Persona("Pepe", 23, "ivan@pepe.com", "12345678A")
+    // Crear una PersonaExcepcion
+    val p1 = PersonaExcepcion("Pepe", 23, "ivan@pepe.com", "12345678A")
 
     try {
-        val p2 = Persona("felipe", -17, "http://felipe.com", "ABCDEFGH1")
+        val p2 = PersonaExcepcion("felipe", -17, "http://felipe.com", "ABCDEFGH1")
     }catch (e: IllegalNombreException) {
-        println("Error al crear la persona. Su nombre es inválido: ${e.message}")
+        println("Error al crear la PersonaExcepcion. Su nombre es inválido: ${e.message}")
     }catch (e: IllegalEdadException) {
-        println("Error al crear la persona. Su edad es inválida: ${e.message}")
+        println("Error al crear la PersonaExcepcion. Su edad es inválida: ${e.message}")
     }catch (e: IllegalEmailException) {
-        println("Error al crear la persona. Su email es inválido: ${e.message}")
+        println("Error al crear la PersonaExcepcion. Su email es inválido: ${e.message}")
     }catch (e: IllegalDNIException) {
-        println("Error al crear la persona. Su DNI es inválido: ${e.message}")
+        println("Error al crear la PersonaExcepcion. Su DNI es inválido: ${e.message}")
     }catch (e: IllegalArgumentException) {
-        println("Otro error al crear la persona: ${e.message}")
+        println("Otro error al crear la PersonaExcepcion: ${e.message}")
     }
 }
 

@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a483357-9db9-40d1-b3fc-cd70eef89694" name="Changes" comment="" />
+    <list default="true" id="3a483357-9db9-40d1-b3fc-cd70eef89694" name="Changes" comment="Testing">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/Persona.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/error/GenericError.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/error/PersonaArgumentError.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/concepts/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/PersonaEither.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/concepts/PersonaEither.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/PersonaEither2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/concepts/PersonaEither2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/PersonaExcepciones.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/concepts/PersonaExcepciones.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/PersonaNulable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/concepts/PersonaNulable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/PersonaResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/concepts/PersonaResult.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,9 +28,37 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2Uyo7czWYbHt06vW0tPLIbvQjI5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -29,9 +70,78 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/ivan/IdeaProjects/formacionKotlin/src/main/kotlin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MTConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/concepts" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/model" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="model.error" />
+    </key>
+    <key name="KotlinExtractInterfaceDialog.RECENT_KEYS">
+      <recent name="model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.PersonaEither2Kt">
+    <configuration name="PersonaEither2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="concepts.PersonaEither2Kt" />
+      <module name="formacionKotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonaEitherKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="concepts.PersonaEitherKt" />
+      <module name="formacionKotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonaExcepcionesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="concepts.PersonaExcepcionesKt" />
+      <module name="formacionKotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonaNulableKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="concepts.PersonaNulableKt" />
+      <module name="formacionKotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonaResultKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="concepts.PersonaResultKt" />
+      <module name="formacionKotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.PersonaEither2Kt" />
+        <item itemvalue="Kotlin.PersonaEitherKt" />
+        <item itemvalue="Kotlin.PersonaResultKt" />
+        <item itemvalue="Kotlin.PersonaNulableKt" />
+        <item itemvalue="Kotlin.PersonaExcepcionesKt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,8 +150,53 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693921016918</updated>
-      <workItem from="1693921018220" duration="2000" />
+      <workItem from="1693921018220" duration="26110000" />
+      <workItem from="1694080020864" duration="261000" />
+      <workItem from="1694080293701" duration="2158000" />
     </task>
+    <task id="LOCAL-00001" summary="Notas">
+      <option name="closed" value="true" />
+      <created>1693998901461</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693998901461</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Either funcional">
+      <option name="closed" value="true" />
+      <created>1694008923260</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694008923260</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Validaciones">
+      <option name="closed" value="true" />
+      <created>1694009930196</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694009930196</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Testing">
+      <option name="closed" value="true" />
+      <created>1694015689260</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694015689260</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Notas" />
+    <MESSAGE value="Either funcional" />
+    <MESSAGE value="Validaciones" />
+    <MESSAGE value="Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing" />
   </component>
 </project>

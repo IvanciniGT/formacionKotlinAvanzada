@@ -1,3 +1,5 @@
+package concepts
+
 import arrow.core.*
 import arrow.core.raise.either
 import arrow.core.raise.ensure
@@ -25,7 +27,7 @@ interface PersonaEither2{
     companion object {
         // INVOKE sobreescribe la llamada a la interfaz, como si fuera un constructor
         //operator fun invoke(nombre: String, edad: Int, email: String, dni: String): Either<NonEmptyList<PersonaCreationError2>,PersonaEither2> = either {
-        operator fun invoke(nombre: String, edad: Int, email: String, dni: String): EitherNel<PersonaCreationError2,PersonaEither2> = either {
+        operator fun invoke(nombre: String, edad: Int, email: String, dni: String): EitherNel<PersonaCreationError2, PersonaEither2> = either {
                 // val mayorDeEdad: Boolean = edad >= 18
                 // ME aseguro que el nombre tenga caracteres y empiece por mayúscula
             zipOrAccumulate(

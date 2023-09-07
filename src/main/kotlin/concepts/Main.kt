@@ -1,4 +1,4 @@
-/*fun doblar( numero: Int ) : Int{
+package concepts/*fun doblar( numero: Int ) : Int{
     return numero * 2
 }
 */

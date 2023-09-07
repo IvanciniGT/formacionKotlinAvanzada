@@ -1,4 +1,4 @@
-
+package concepts
 interface PersonaResult{
     val nombre: String
     val edad: Int
