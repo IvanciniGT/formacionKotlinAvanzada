@@ -446,14 +446,14 @@ Servidor Web con un servicio Web CRUD. (KTOR, ésto me monta en auto. el servido
 
 MODELO: interface Persona
 con sus validaciones: ARROW
-
+  v
 REPOSITORIO: interface PersonaRepository
 guardar
 buscarTodos
 buscarUno
 En memoria (con una List<Persona>)
 * Usaremos ARROW por posibles problemas de comunicación con la BBDD
-
+  v
 SERVICIO: (Aquí está la lógica de negocio)
 altaPersona:
 Validar los datos
@@ -462,7 +462,7 @@ Mandar un email
 recuperarPersonas
 recuperarPersona
 * El servicio para poder funcionar, qué necesita? una instancia de un REPOSITORIO DE USUARIOS <<<< Inyección de dependencias (dagger)
-
+  v
 CONTROLADOR:
 Esto será la exposición de estas funciones de arriba (servicio) mediante HTTP
 DTOs

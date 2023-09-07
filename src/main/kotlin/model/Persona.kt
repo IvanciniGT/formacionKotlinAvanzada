@@ -7,19 +7,21 @@ import arrow.core.raise.zipOrAccumulate
 import model.error.PersonaArgumentError
 
 interface Persona{
-    val nombre: String
-    val edad: Int
-    val email: String
-    val dni: String
+    var id: Int?
+    var nombre: String
+    var edad: Int
+    var email: String
+    var dni: String
 
     private data class PersonaImpl(
-        override val nombre: String,
-        override val edad: Int,
-        override val email: String,
-        override val dni: String,
+        override var id: Int?,
+        override var nombre: String,
+        override var edad: Int,
+        override var email: String,
+        override var dni: String,
     ) : Persona
     companion object {
-        operator fun invoke(nombre: String, edad: Int, email: String, dni: String): EitherNel<PersonaArgumentError, Persona> = either {
+        operator fun invoke(nombre: String, edad: Int, email: String, dni: String, id: Int? = null): EitherNel<PersonaArgumentError, Persona> = either {
             zipOrAccumulate(
                 { ensure (nombre.matches(Regex("^[A-Z][a-záéíóúñ]+$"))) {
                     PersonaArgumentError.IllegalNombre
@@ -33,7 +35,7 @@ interface Persona{
                 {ensure (dni.matches(Regex("^[0-9]{1,8}[A-Z]$"))) {
                     PersonaArgumentError.IllegalDni
                 }}
-            ) { _,_,_,_ -> PersonaImpl(nombre, edad, email, dni) }
+            ) { _,_,_,_ -> PersonaImpl(id, nombre, edad, email, dni) }
         }
     }
 }
