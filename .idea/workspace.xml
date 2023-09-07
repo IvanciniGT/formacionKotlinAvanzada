@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a483357-9db9-40d1-b3fc-cd70eef89694" name="Changes" comment="Refactor">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/error/RepositorioError.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/repository/PersonaRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/repository/PersonaRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/model/PersonaTest.kt" afterDir="false" />
+    <list default="true" id="3a483357-9db9-40d1-b3fc-cd70eef89694" name="Changes" comment="Repository">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/PersonaController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/PersonaControllerImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/dto/DatosNuevaPersonaDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/dto/DatosPersonaDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/error/PersonaControllerError.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/mapper/DatosNuevaPersonaDTO2Persona.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/mapper/Persona2DatosPersonaDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/service/PersonaControllerImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/service/PersonaServicio.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/PersonaDatos.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/repository/PersonaRepositoryTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/service/PersonaControllerTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notas/dia3.md" beforeDir="false" afterPath="$PROJECT_DIR$/notas/dia3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/Persona.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/Persona.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/model/PersonaTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/model/PersonaTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,9 +100,12 @@
     <key name="KotlinExtractInterfaceDialog.RECENT_KEYS">
       <recent name="model" />
     </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="controller.dto" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.PersonaTest">
-    <configuration name="PersonaTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.PersonaServicioTest.Recuperar una persona por su id">
+    <configuration name="PersonaRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -107,7 +118,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;model.PersonaTest&quot;" />
+            <option value="&quot;repository.PersonaRepositoryTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -118,7 +129,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PersonaTest.Una persona con datos correctos debería poder crearse sin problema" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PersonaRepositoryTest.Probar a dar de alta un usuario sin id" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -131,7 +142,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;model.PersonaTest.Una persona con datos correctos debería poder crearse sin problema&quot;" />
+            <option value="&quot;repository.PersonaRepositoryTest.Probar a dar de alta un usuario sin id&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -142,7 +153,55 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="formacionKotlin [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PersonaServicioTest.Recuperar todas las personas" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;service.PersonaServicioTest.Recuperar todas las personas&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PersonaServicioTest.Recuperar una persona por su id" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;service.PersonaServicioTest.Recuperar una persona por su id&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="formacionKotlin [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -153,7 +212,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="check" />
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,27 +223,13 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PersonaEither2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="concepts.PersonaEither2Kt" />
-      <module name="formacionKotlin.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonaEitherKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="concepts.PersonaEitherKt" />
-      <module name="formacionKotlin.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PersonaTest" />
-        <item itemvalue="Gradle.formacionKotlin [check]" />
-        <item itemvalue="Gradle.PersonaTest.Una persona con datos correctos debería poder crearse sin problema" />
-        <item itemvalue="Kotlin.PersonaEither2Kt" />
-        <item itemvalue="Kotlin.PersonaEitherKt" />
+        <item itemvalue="Gradle.PersonaServicioTest.Recuperar una persona por su id" />
+        <item itemvalue="Gradle.PersonaServicioTest.Recuperar todas las personas" />
+        <item itemvalue="Gradle.PersonaRepositoryTest" />
+        <item itemvalue="Gradle.PersonaRepositoryTest.Probar a dar de alta un usuario sin id" />
+        <item itemvalue="Gradle.formacionKotlin [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +243,7 @@
       <updated>1693921016918</updated>
       <workItem from="1693921018220" duration="26110000" />
       <workItem from="1694080020864" duration="261000" />
-      <workItem from="1694080293701" duration="5831000" />
+      <workItem from="1694080293701" duration="12505000" />
     </task>
     <task id="LOCAL-00001" summary="Notas">
       <option name="closed" value="true" />
@@ -240,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694092332802</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Repository">
+      <option name="closed" value="true" />
+      <created>1694095675235</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694095675235</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +305,7 @@
     <MESSAGE value="Validaciones" />
     <MESSAGE value="Testing" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Repository" />
   </component>
 </project>

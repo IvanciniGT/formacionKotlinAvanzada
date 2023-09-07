@@ -15,6 +15,8 @@ dependencies {
     implementation("io.arrow-kt:arrow-core")
 
     testImplementation(kotlin("test"))
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0")
+
 }
 
 tasks.test {
