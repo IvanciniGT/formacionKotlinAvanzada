@@ -1,0 +1,4 @@
+
+¤kotlin:S100"ŒRename function "Una persona con datos correctos deberÃ­a poder crearse sin problema" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(æ…Û˜
+´kotlin:S100"œRename function "Una persona con datos incorrectos NO deberÃ­a poder crearse (Debe devolver errores)" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(³¹©Æ
+Çkotlin:S100 "ªRename function "Una persona con email incorrecto NO deberÃ­a poder crearse (Debe devolver un error para el email)" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(íŠÝýúÿÿÿÿ

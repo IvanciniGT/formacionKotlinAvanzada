@@ -1,45 +1,68 @@
-package service
+package controller
 
+import arrow.core.*
 import arrow.core.Either
-import arrow.core.left
-import arrow.core.right
-import controller.PersonaController
 import controller.dto.DatosNuevaPersonaDTO
-import controller.dto.DatosPersonaDTO
 import controller.error.PersonaControllerError
+import controller.mapper.datosNuevaPersonaDTO2Persona
 import controller.mapper.persona2DatosPersonaDTO
+import io.ktor.http.*
+import io.ktor.server.application.*
+import io.ktor.server.request.*
+import io.ktor.server.response.*
 import model.Persona
+import model.error.PersonaArgumentError
 import model.error.RepositorioError
-import repository.PersonaRepository
-
+import service.PersonaServicio
+import javax.inject.Inject
 
 class PersonaControllerImpl
-constructor (private val personaServicio: PersonaServicio)
+@Inject constructor( private val personaServicio: PersonaServicio)
     :PersonaController{
 
-    override fun nuevaPersona(persona: DatosNuevaPersonaDTO): Either<PersonaControllerError, DatosPersonaDTO> {
-        //val persona: Persona =  // Al hacer la conversión de datos... de DatosNuevaPersonaDTO -> Persona
-        // Me puede dar un error en las validaciones de los datos
-        //personaServicio.nuevaPersona(persona)
-        TODO("Not yet implemented")
-        // Escribir
+    override suspend fun nuevaPersona(call: ApplicationCall) {
+        val persona: DatosNuevaPersonaDTO = call.receive<DatosNuevaPersonaDTO>()
+        val datosValidados: EitherNel<PersonaArgumentError, Persona> = datosNuevaPersonaDTO2Persona(persona)
+        if (datosValidados.isLeft()){
+            val error = PersonaControllerError()
+            error.errorEnArgumentos = datosValidados.leftOrNull()!!
+            call.respond(HttpStatusCode.BadRequest, error)
+        }else {
+            val personaNueva: Either<RepositorioError, Persona> =
+                personaServicio.nuevaPersona(datosValidados.getOrNull()!!)
+            if (personaNueva.isLeft()) {
+                val error = PersonaControllerError()
+                error.errorEnRepositorio = personaNueva.leftOrNull()!!
+                call.respond(HttpStatusCode.InternalServerError, error)
+            } else {
+                call.respond(HttpStatusCode.Created, personaNueva.getOrNull()!!)
+            }
+        }
     }
 
-    override fun recuperarPersona(id: Int): Either<PersonaControllerError, DatosPersonaDTO?> {
-        TODO("Not yet implemented")
-        // Escribir
+    override suspend fun recuperarPersona(call: ApplicationCall) {
+        call.parameters["id"]?: call.respond(HttpStatusCode.BadRequest, "Falta el id")
+        val id: Int = call.parameters["id"]!!.toInt()
+        personaServicio.recuperarPersona(id)
+            .mapLeft {
+                call.respond(HttpStatusCode.InternalServerError, PersonaControllerError(errorEnRepositorio = it))
+            }
+            .onRight {
+                it?.let { persona -> call.respond(HttpStatusCode.OK,persona2DatosPersonaDTO(persona)) } ?:
+                call.respond(HttpStatusCode.NotFound, "Persona no encontrada") }
     }
 
-    override fun recuperarTodasLasPersonas(): Either<PersonaControllerError, List<DatosPersonaDTO>> {
+    override suspend fun recuperarTodasLasPersonas(call: ApplicationCall){
         val listado :Either<RepositorioError, List<Persona>> = personaServicio.recuperarTodasLasPersonas()
         listado.fold({
             val error = PersonaControllerError()
             error.errorEnRepositorio = it
-            return error.left()
+            call.respond(HttpStatusCode.InternalServerError, error)
         }){
-            return it.map {persona2DatosPersonaDTO(it)}.right()
+            val transformado = it.map {persona -> persona2DatosPersonaDTO(persona)}
+            call.respond(HttpStatusCode.OK, transformado)
         }
-        // Escribir esto con map y flatMap
+
     }
 
 }

@@ -1,10 +1,11 @@
 package controller.error
 
+import arrow.core.NonEmptyList
 import model.error.PersonaArgumentError
 import model.error.RepositorioError
 
-class PersonaControllerError {
+class PersonaControllerError (
 
-    var errorEnArgumento: PersonaArgumentError? = null
+    var errorEnArgumentos: NonEmptyList<PersonaArgumentError>? = null,
     var errorEnRepositorio: RepositorioError? = null
-}
+)

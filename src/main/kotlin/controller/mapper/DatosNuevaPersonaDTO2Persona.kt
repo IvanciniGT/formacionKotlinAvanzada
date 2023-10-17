@@ -1,6 +1,5 @@
 package controller.mapper
 
-import arrow.core.Either
 import arrow.core.EitherNel
 import controller.dto.DatosNuevaPersonaDTO
 import model.Persona

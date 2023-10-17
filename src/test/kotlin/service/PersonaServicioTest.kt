@@ -10,7 +10,7 @@ import org.mockito.kotlin.whenever
 import repository.PersonaRepository
 import kotlin.test.Test
 
-class PersonaControllerTest {
+class PersonaServicioTest {
 
     private val personaRepositorio: PersonaRepository = Mockito.mock( // Esto es magia de Mockito
         PersonaRepository::class.java )
@@ -18,7 +18,7 @@ class PersonaControllerTest {
     // Esto crea en automático una clase Kotlin que implementa PersonaRepository
     // Devolviendo por defecto los valores más básicos posibles (Dummy: null, 0, false, listas vacias)
     // Esto no vamos a re implementar... pero... solo lo que necesito para probar
-    private val personaController: PersonaController = PersonaControllerImpl(personaRepositorio)
+    private val personaController: PersonaServicio = PersonaServicioImpl(personaRepositorio)
 
     @Test
     fun `Recuperar una persona por su id`(){

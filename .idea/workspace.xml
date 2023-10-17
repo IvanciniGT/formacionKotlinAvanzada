@@ -4,22 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a483357-9db9-40d1-b3fc-cd70eef89694" name="Changes" comment="Repository">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/PersonaController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/PersonaControllerImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/dto/DatosNuevaPersonaDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/dto/DatosPersonaDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/error/PersonaControllerError.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/mapper/DatosNuevaPersonaDTO2Persona.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/controller/mapper/Persona2DatosPersonaDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/service/PersonaControllerImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/service/PersonaServicio.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/PersonaDatos.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/repository/PersonaRepositoryTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/service/PersonaControllerTest.kt" afterDir="false" />
+    <list default="true" id="3a483357-9db9-40d1-b3fc-cd70eef89694" name="Changes" comment="Controller">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/0898cf6ea8e6d2a36a3e375cb96672dd37fdb5c7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29e9315117870a8c9ab4e4d921df928e50b1afd7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/387689099004fd0171ed619fbda82623c29b25f5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52879b21e0060abd53d4e99b2bfcf5c0e4f27bfc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/7386a11d61b83e5897139b23aa2053fb468c4ce4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7de423e35efd9c640af29a03a1e25d1bb43b640d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/83d2f6dba06f4c01a0c79165113cfc5958f04b0e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a1b0cb31e88c16f11267c64f780f66a72a2823ce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9b802780e8438bdc550bd233e343c4c2609db70" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/aeb0d0937aa3326c30bcbf0c10cba4b91b062f1b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2a32b5c6f80e645d61e34034fb58ff2a34270fc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c73cfdcdeeb92e731ce8cf441ba86d4db066e4b3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d71e0a6df9dee598d6e9c4578d85ef75c26fdc7a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e23dafd5283c68f63c80b290718109cd0f9e4408" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/0898cf6ea8e6d2a36a3e375cb96672dd37fdb5c7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/9/29e9315117870a8c9ab4e4d921df928e50b1afd7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/8/387689099004fd0171ed619fbda82623c29b25f5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/52879b21e0060abd53d4e99b2bfcf5c0e4f27bfc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/3/7386a11d61b83e5897139b23aa2053fb468c4ce4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/d/7de423e35efd9c640af29a03a1e25d1bb43b640d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/3/83d2f6dba06f4c01a0c79165113cfc5958f04b0e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/1/a1b0cb31e88c16f11267c64f780f66a72a2823ce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/9/a9b802780e8438bdc550bd233e343c4c2609db70" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/e/aeb0d0937aa3326c30bcbf0c10cba4b91b062f1b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/2/c2a32b5c6f80e645d61e34034fb58ff2a34270fc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/7/c73cfdcdeeb92e731ce8cf441ba86d4db066e4b3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/7/d71e0a6df9dee598d6e9c4578d85ef75c26fdc7a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/2/e23dafd5283c68f63c80b290718109cd0f9e4408" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notas/dia5.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Application.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/config/Dagger.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/config/Routing.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/config/Serialization.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/model/PersonaTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/model/PersonaTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controller/PersonaController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controller/PersonaController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controller/PersonaControllerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controller/PersonaControllerImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controller/dto/DatosPersonaDTO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controller/dto/DatosPersonaDTO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controller/error/PersonaControllerError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controller/error/PersonaControllerError.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controller/mapper/DatosNuevaPersonaDTO2Persona.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controller/mapper/DatosNuevaPersonaDTO2Persona.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/service/PersonaControllerImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/service/PersonaServicioImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/service/PersonaControllerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/service/PersonaServicioTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +98,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -72,16 +114,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build formacionKotlin.executor": "Run",
+    "Kotlin.ApplicationKt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ivan/IdeaProjects/formacionKotlin/src/main/kotlin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "MTConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -89,6 +138,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/kotlin" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/kotlin/concepts" />
@@ -104,79 +154,7 @@
       <recent name="controller.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PersonaServicioTest.Recuperar una persona por su id">
-    <configuration name="PersonaRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;repository.PersonaRepositoryTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="PersonaRepositoryTest.Probar a dar de alta un usuario sin id" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;repository.PersonaRepositoryTest.Probar a dar de alta un usuario sin id&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="PersonaServicioTest.Recuperar todas las personas" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;service.PersonaServicioTest.Recuperar todas las personas&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Kotlin.ApplicationKt">
     <configuration name="PersonaServicioTest.Recuperar una persona por su id" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -201,7 +179,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="formacionKotlin [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="formacionKotlin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -212,7 +190,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -223,13 +201,64 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="formacionKotlin [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="formacionKotlin [kaptKotlin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="kaptKotlin" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ApplicationKt" />
+      <module name="formacionKotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ApplicationKt" />
+        <item itemvalue="Gradle.formacionKotlin [clean]" />
+        <item itemvalue="Gradle.formacionKotlin [build]" />
+        <item itemvalue="Gradle.formacionKotlin [kaptKotlin]" />
         <item itemvalue="Gradle.PersonaServicioTest.Recuperar una persona por su id" />
-        <item itemvalue="Gradle.PersonaServicioTest.Recuperar todas las personas" />
-        <item itemvalue="Gradle.PersonaRepositoryTest" />
-        <item itemvalue="Gradle.PersonaRepositoryTest.Probar a dar de alta un usuario sin id" />
-        <item itemvalue="Gradle.formacionKotlin [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +272,10 @@
       <updated>1693921016918</updated>
       <workItem from="1693921018220" duration="26110000" />
       <workItem from="1694080020864" duration="261000" />
-      <workItem from="1694080293701" duration="12505000" />
+      <workItem from="1694080293701" duration="18613000" />
+      <workItem from="1694156605673" duration="982000" />
+      <workItem from="1697461203045" duration="2793000" />
+      <workItem from="1697502139735" duration="5972000" />
     </task>
     <task id="LOCAL-00001" summary="Notas">
       <option name="closed" value="true" />
@@ -293,7 +325,23 @@
       <option name="project" value="LOCAL" />
       <updated>1694095675235</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Controller">
+      <option name="closed" value="true" />
+      <created>1694102246843</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694102246843</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Controller">
+      <option name="closed" value="true" />
+      <created>1694102676337</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694102676337</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +354,7 @@
     <MESSAGE value="Testing" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Repository" />
+    <MESSAGE value="Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controller" />
   </component>
 </project>
