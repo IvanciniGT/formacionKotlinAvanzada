@@ -1,6 +1,4 @@
 
-g
-7src/main/kotlin/controller2/dto/DatosNuevaPersonaDTO.kt,c/7/c73cfdcdeeb92e731ce8cf441ba86d4db066e4b3
 @
 build.gradle.kts,d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d
 W
@@ -19,8 +17,6 @@ _
 /src/main/kotlin/repository/PersonaRepository.kt,e/2/e23dafd5283c68f63c80b290718109cd0f9e4408
 c
 3src/main/kotlin/controller/PersonaControllerImpl.kt,a/9/a9b802780e8438bdc550bd233e343c4c2609db70
-d
-4src/main/kotlin/controller2/PersonaControllerImpl.kt,d/7/d71e0a6df9dee598d6e9c4578d85ef75c26fdc7a
 P
  src/main/kotlin/model/Persona.kt,7/3/7386a11d61b83e5897139b23aa2053fb468c4ce4
 N
@@ -31,3 +27,20 @@ Z
 .src/main/kotlin/service/PersonaServicioImpl.kt,3/8/387689099004fd0171ed619fbda82623c29b25f5
 P
  src/main/kotlin/config/Dagger.kt,2/9/29e9315117870a8c9ab4e4d921df928e50b1afd7
+=
+notas/dia5.md,c/8/c8d86f71e637f8b8c95068bdb338ecfb07cf269b
+q
+Asrc/main/kotlin/controller/mapper/DatosNuevaPersonaDTO2Persona.kt,9/0/9069b7692c25990879fc8952175a7ec702d442e5
+c
+3src/main/kotlin/repository/PersonaRepositoryImpl.kt,6/a/6ab867503d6867ebe59cf66e730004acc47e2db3
+_
+/src/main/kotlin/controller/PersonaController.kt,a/c/ac415d20655d2138162d7e22662edae14b913ebc
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+7
+gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
+a
+1src/main/kotlin/controller/dto/DatosPersonaDTO.kt,0/e/0e54fdf07375cafca5f84e2992ea41b59de54586
+f
+6src/main/kotlin/controller/dto/DatosNuevaPersonaDTO.kt,8/b/8b174be69fa9952cb16b3d81e9591ee7f6b00800
